@@ -32,6 +32,15 @@ case $( rpm -qf /etc/os-release --qf '%{name}' ) in
          rhui-REGION-rhel-server-extras
       )
       ;;
+    system-release)
+      OSREPOS=(
+         rhui-REGION-client-config-server-7
+         rhui-REGION-rhel-server-releases
+         rhui-REGION-rhel-server-rh-common
+         rhui-REGION-rhel-server-optional
+         rhui-REGION-rhel-server-extras
+      )
+      ;;
    *)
       echo "Unknown OS. Aborting" >&2
       exit 1
