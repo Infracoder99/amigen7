@@ -6,7 +6,8 @@
 #####################################
 PROGNAME=$(basename "$0")
 CHROOT="${AMIGENCHROOT:-/mnt/ec2-root}"
-
+echo 'custom changes'
+echo $(rpm -qf /etc/os-release --qf '%{name}')
 case $( rpm -qf /etc/os-release --qf '%{name}' ) in
    centos-release)
       OSREPOS=(
